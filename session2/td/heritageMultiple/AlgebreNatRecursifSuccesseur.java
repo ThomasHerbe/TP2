@@ -1,6 +1,6 @@
 package session2.td.heritageMultiple;
 
-public interface AlgebreNatRecursifSuccesseur {
+public interface AlgebreNatRecursifSuccesseur extends Nat{
 
 	default public Nat zero() {
 		return this.creerNatAvecValeur(0);

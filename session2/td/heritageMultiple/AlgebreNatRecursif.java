@@ -2,16 +2,28 @@ package session2.td.heritageMultiple;
 
 public interface AlgebreNatRecursif extends AlgebreNatRecursifZero, AlgebreNatRecursifSuccesseur{
 
-	@Override
-	default Nat un() {
-		// TODO Auto-generated method stub
-		return AlgebreNatRecursifSuccesseur.super.un();
+	default public Nat zero() {
+		return this.creerNatAvecValeur(0);
 	}
 
-	@Override
-	default Nat somme(Nat x) {
-		// TODO Auto-generated method stub
-		return AlgebreNatRecursifZero.super.somme(x);
+	default public Nat somme(Nat x) {
+		return this.creerNatAvecValeur(this.val() + x.val());
 	}
 
+	default public Nat un() {
+		return this.creerNatAvecValeur(1);
+	}
+
+	default public Nat produit(Nat x) {
+		return this.creerNatAvecValeur(this.val() * x.val());
+	}
+
+	default public Nat modulo(Nat x) {
+		return this.creerNatAvecValeur(this.val()%x.val());
+	}
+
+
+	default public Nat div(Nat x) {
+		return this.creerNatAvecValeur(this.val()/x.val());
+	}
 }

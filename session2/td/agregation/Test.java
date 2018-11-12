@@ -1,20 +1,25 @@
-package session2.td.heritageMultiple;
+package session2.td.agregation;
+
+import session1.td.Outils;
+import session2.td.heritageMultiple.FabriqueNaturels;
 
 public class Test {
 
-	public static void main(String[] args) {
-		test(new NatDecimal("0"));
-		test(new NatDecimalParInt("0"));
-		test(new NatDecimalRecursif("0"));
-		test(new NatParIntDecimal(0));
-		test(new NatParInt(0));
-		test(new NatParIntRecursif(0));
-		test(new ZeroDecimal());
-		test(new ZeroParInt());
-		test(new ZeroRecursif());
-		test(new SuccDecimal(new ZeroDecimal()));
-		test(new SuccParInt(new ZeroParInt()));
-		test(new SuccRecursif(new ZeroRecursif()));
+	public static void main(String[] args) { 
+		test(new NatCalculantAvecDesNombresDecimaux(new NombreDecimal("0")));
+		test(new NatCalculantAvecDesNombresDecimaux(new IntPositif(0)));
+		test(new NatCalculantAvecDesNombresDecimaux(new ZeroInductif()));
+		test(new NatCalculantAvecDesNombresDecimaux(new SuccInductif(new ZeroInductif())));
+		
+		test(new NatCalculantAvecDesInts(new NombreDecimal("0")));
+		test(new NatCalculantAvecDesInts(new IntPositif(0)));
+		test(new NatCalculantAvecDesInts(new SuccInductif(new ZeroInductif())));
+		test(new NatCalculantAvecDesInts(new ZeroInductif()));
+		
+		test(new NatCalculantRecursivement(new NombreDecimal("0")));
+		test(new NatCalculantRecursivement(new IntPositif(0)));
+		test(new NatCalculantRecursivement(new ZeroInductif()));
+		test(new NatCalculantRecursivement(new SuccInductif(new ZeroInductif())));
 
 	}
 

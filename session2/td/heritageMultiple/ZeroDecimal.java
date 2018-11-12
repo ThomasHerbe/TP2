@@ -1,7 +1,5 @@
 package session2.td.heritageMultiple;
 
-import session1.td.Succ;
-
 public class ZeroDecimal extends EtatZero implements AlgebreNatDecimal{
 
 	public ZeroDecimal() {
