@@ -3,7 +3,7 @@ package session2.td.heritageMultiple;
 public interface AlgebreNatRecursifZero extends Nat{
 
 	default public Nat zero() {
-		return this.creerNatAvecValeur(0);
+		return creerZero();
 	}
 
 	default public Nat somme(Nat x) {
@@ -11,7 +11,7 @@ public interface AlgebreNatRecursifZero extends Nat{
 	}
 
 	default public Nat un() {
-		return this.creerNatAvecValeur(1);
+		return this.creerSuccesseur(this.creerZero());
 	}
 
 	default public Nat produit(Nat x) {

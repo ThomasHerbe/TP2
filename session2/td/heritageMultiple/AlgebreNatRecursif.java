@@ -6,24 +6,31 @@ public interface AlgebreNatRecursif extends AlgebreNatRecursifZero, AlgebreNatRe
 		return this.creerNatAvecValeur(0);
 	}
 
-	default public Nat somme(Nat x) {
-		return this.creerNatAvecValeur(this.val() + x.val());
-	}
-
 	default public Nat un() {
 		return this.creerNatAvecValeur(1);
 	}
 
+	default public Nat somme(Nat x) {
+		if(this.estNul())
+			return AlgebreNatRecursifZero.super.somme(x);
+		return AlgebreNatRecursifSuccesseur.super.somme(x);
+	}
+
 	default public Nat produit(Nat x) {
-		return this.creerNatAvecValeur(this.val() * x.val());
+		if(this.estNul())
+			return AlgebreNatRecursifZero.super.produit(x);
+		return AlgebreNatRecursifSuccesseur.super.produit(x);
 	}
 
 	default public Nat modulo(Nat x) {
-		return this.creerNatAvecValeur(this.val()%x.val());
+		if(this.estNul())
+			return AlgebreNatRecursifZero.super.modulo(x);
+		return AlgebreNatRecursifSuccesseur.super.modulo(x);
 	}
 
-
 	default public Nat div(Nat x) {
-		return this.creerNatAvecValeur(this.val()/x.val());
+		if(this.estNul())
+			return AlgebreNatRecursifZero.super.div(x);
+		return AlgebreNatRecursifSuccesseur.super.div(x);
 	}
 }
